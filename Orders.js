@@ -5,7 +5,7 @@ import { ListItem } from "react-native-elements";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Styles from './Styles';
 import bearerToken from "./Tokens";
-import { SNOWFLAKE_ACCOUNT } from '@env';
+import { SNOWFLAKE_ACCOUNT_IDENTIFIER } from '@env';
 
 export default function Orders({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ export default function Orders({ route, navigation }) {
     try {
       const date = new Date();
       setCurrentDate(date.toLocaleString());
-      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT + '.snowflakecomputing.com/api/v2/statements', {
+      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT_IDENTIFIER + '.snowflakecomputing.com/api/v2/statements', {
         method: 'POST',
         headers: {
         Accept: 'application/json',
@@ -53,7 +53,7 @@ export default function Orders({ route, navigation }) {
 
   const getOrderHistoryData = async () => {
     try {
-      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT + '.snowflakecomputing.com/api/v2/statements', {
+      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT_IDENTIFIER + '.snowflakecomputing.com/api/v2/statements', {
         method: 'POST',
         headers: {
         Accept: 'application/json',

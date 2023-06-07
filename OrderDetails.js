@@ -5,7 +5,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import SpinnerButton from 'react-native-spinner-button';
 import Styles from './Styles';
 import bearerToken from "./Tokens";
-import { SNOWFLAKE_ACCOUNT } from '@env';
+import { SNOWFLAKE_ACCOUNT_IDENTIFIER } from '@env';
 
 export default function OrderDetails({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ export default function OrderDetails({ route, navigation }) {
     try {
       const date = new Date();
       setCurrentDate(date.toLocaleString());
-      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT + '.snowflakecomputing.com/api/v2/statements', {
+      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT_IDENTIFIER + '.snowflakecomputing.com/api/v2/statements', {
         method: 'POST',
         headers: {
         Accept: 'application/json',
@@ -55,7 +55,7 @@ export default function OrderDetails({ route, navigation }) {
   const updateOrderStatus = async (orderNum) => {
     try {
       setDefaultLoading(true);
-      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT + '.snowflakecomputing.com/api/v2/statements', {
+      const response = await fetch('https://' + SNOWFLAKE_ACCOUNT_IDENTIFIER + '.snowflakecomputing.com/api/v2/statements', {
         method: 'POST',
         headers: {
         Accept: 'application/json',
