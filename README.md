@@ -33,5 +33,5 @@ We are using Key Pair Authentication to authenticate with Snowflake using SQL AP
 5. Click on ORDER READY button to complete the order. This action updates the Order Status value to Completed for this Order and take you back to the InQueue Orders Screen
 6. Now, Click on Order History tab to see the completed orders.
 
-For detailed steps, Refer to the Quickstart.
+For detailed steps, Refer to the Quickstart, https://quickstarts.snowflake.com/guide/developing_tasty_bytes_react_native_application_with_snowflake_sql_api
 
